@@ -8,7 +8,7 @@ export MSYS_NO_PATHCONV=1
   docker build -t npm ./docker
 
   docker run -it --rm \
-    --mount "type=bind,src=$(pwd)/,dst=/workdir/chrome-extension" \
-    -w /workdir/chrome-extension \
+    --mount "type=bind,src=$(pwd)/,dst=/workdir" \
+    -w /workdir \
     npm "$@"
 )

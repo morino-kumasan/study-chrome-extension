@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "study-chrome-extension",
+    "description": "study chrome extension",
+    "version": "1.0.0",
+    "option_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "content_scripts": {
+        "all_frames": false,
+        "matches": [
+            "https://hogehoge"
+        ],
+        "js": [
+            "js/main.js"
+        ],
+        "css": [
+            "styles/styles.css"
+        ],
+        "run_at": "document_end"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": []
+}
